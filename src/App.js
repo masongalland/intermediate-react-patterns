@@ -3,10 +3,11 @@ import { Transition } from 'react-spring';
 
 import logo from './logo.svg';
 import './App.css';
-import User from './User';
-import UserProvider from './UserProvider';
 import { Toggle } from 'Utilities';
 import { Modal, Card } from 'Elements';
+import User from './User';
+import UserProvider from './UserProvider';
+import Drag from './Drag';
 
 class App extends Component {
   render() {
@@ -17,19 +18,8 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to React</h1>
           </header>
+          <Drag />
           <User />
-          <section>
-            <Toggle>
-              {({ on, toggle }) => (
-                <Fragment>
-                  <button onClick={toggle}>Show / Hide</button>
-                  <Transition from={{ opacity: 0 }} enter={{ opacity: 1 }} leave={{ opacity: 0 }}>
-                    {on && Header}
-                  </Transition>
-                </Fragment>
-              )}
-            </Toggle>
-          </section>
           <Toggle>
             {({ on, toggle }) => (
               <Fragment>
